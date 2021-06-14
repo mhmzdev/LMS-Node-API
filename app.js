@@ -33,4 +33,4 @@ mongoose.connect(String(dbConnect), { useNewUrlParser: true }, () => {
 })
 
 // Listen to port
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
