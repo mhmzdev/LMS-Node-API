@@ -28,7 +28,7 @@ app.get('/', (req, res) => {
 });
 
 // DB Connection
-mongoose.connect(String(process.env.DB_CONNECT), { useNewUrlParser: true }, () => {
+mongoose.connect("mongodb+srv://testuser:testuser123@flutternodejs.92whg.mongodb.net/FlutterNodejs?retryWrites=true&w=majority", { useNewUrlParser: true }, () => {
     console.log("DB CONNECTED!");
 })
 
