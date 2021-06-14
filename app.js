@@ -26,11 +26,15 @@ app.use('/worker', workersRoute);
 app.get('/', (req, res) => {
     res.send('HOME!');
 });
-var dbConnect = process.env.DB_CONNECT; 
+var dbConnect = process.env.DB_CONNECT;
 // DB Connection
-mongoose.connect(String(dbConnect), { useNewUrlParser: true }, () => {
-    console.log("DB CONNECTED!");
-})
+
+// mongoose.connect(String(dbConnect), { useNewUrlParser: true }, () => {
+//     console.log("DB CONNECTED!");
+// })
+
+await mongoose.connection(String(dbConnect), { useNewUrlParser: true })
+
 
 // Listen to port
 app.listen(process.env.PORT || 3000);
