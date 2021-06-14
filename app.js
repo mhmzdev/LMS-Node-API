@@ -26,9 +26,9 @@ app.use('/worker', workersRoute);
 app.get('/', (req, res) => {
     res.send('HOME!');
 });
-
+var dbConnect = process.env.DB_CONNECT; 
 // DB Connection
-mongoose.connect(process.env.DB_CONNECT, { useNewUrlParser: true }, () => {
+mongoose.connect(dbConnect.toString(), { useNewUrlParser: true }, () => {
     console.log("DB CONNECTED!");
 })
 
